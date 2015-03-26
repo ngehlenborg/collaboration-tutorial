@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Collaboration Tools for Research</title>
+
+		<meta name="description" content="Collaboration Tools for Research">
+		<meta name="author" content="Nils Gehlenborg">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Collaboration Tools for Research</h1>
+					<h3>A mini-tutorial</h3>
+					<p>
+						<small><a href="http://www.gehlenborg.com">Nils Gehlenborg</a> / <a href="http://twitter.com/nils_gehlenborg">@nils_gehlenborg</a></small>
+					</p>
+				</section>
+
+				<section data-markdown>
+					# Tools
+						
+					* [GitHub](http://www.github.com)
+					* [Slack](http://www.slack.com)
+					* [ShareLatex](http://www.sharelatex.com)
+					</ul>
+					</p>
+				</section>
+
+				<section data-markdown>
+					## git vs GitHub
+
+					* ```git``` is an open-source distributed version control system
+						* developed for Linux kernel development
+					* GitHub is a (commercial) service built around ```git```
+				</section>
+
+				<section data-markdown>
+					## Important git Features
+
+					* flexible branching model
+					* distributed
+					* supports staging
+				</section>
+
+				<section data-markdown>
+					## Key git Commands
+
+					* ```init``` and ```clone```
+					* ```status``` and ```diff```
+					* ```add``` and ```commit```
+					* ```push```
+					* ```pull```
+					* ```branch```
+				</section>
+
+				<section data-markdown>
+					# git init
+
+					```init``` initializes a new repository. I usually do this on GitHub.
+				</section>
+
+				<section data-markdown>
+					# git clone
+
+					```clone``` copies a repository into a new working directory.
+
+```
+> git clone git@github.com:ngehlenborg/collaboration-tutorial.git
+Cloning into 'collaboration-tutorial'...
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (5/5), done.
+Checking connectivity... done.
+```
+				</section>
+
+				<section data-markdown>
+					## git status
+
+					```status``` shows the current status of the working directory with respect to the repository.
+
+```
+> git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+nothing to commit, working directory clean
+```
+				</section>
+
+				<section data-markdown>
+					## git status (cont'd)
+
+					Then I added some files to the directory ...
+
+```
+> git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+nothing to commit, working directory clean
+octothorpe:collaboration-tutorial nils$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+	css/
+	index.html
+	js/
+	lib/
+	plugin/
+
+nothing added to commit but untracked files present (use "git add" to track)
+```						
+				</section>
+
+				<section data-markdown>
+					## git add
+
+					```add``` stages changes before they are committed to the repository.
+
+```
+> git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+nothing to commit, working directory clean
+```
+				</section>
+
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: false,
+				history: true,
+				center: true,
+
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
